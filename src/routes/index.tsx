@@ -1,10 +1,12 @@
-import React from "react";
+import React, { Profiler } from "react";
 import { Routes, Route } from 'react-router-dom';
 
+import NotFound from "../pages/NotFound";
 import Login from '../pages/Login';
 import SignUp from '../pages/SignUp';
+
 import Dashboard from "../pages/dashboard";
-import NotFound from "../pages/NotFound";
+import Profile from "../pages/Profile";
 
 import Privite from "./Privite";
 
@@ -17,6 +19,7 @@ export default function AppRoutes() {
             <Route path="/register" element={<SignUp />} />
 
             <Route path="/dashboard"element={<Privite><Dashboard/></Privite>} />
+            <Route path="/profile"element={<Privite><Profile/></Privite>} />
 
 
         </Routes>

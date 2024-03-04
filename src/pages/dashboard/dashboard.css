@@ -1,0 +1,119 @@
+.content {
+    margin-left:300px;
+    padding: 1px 16px;
+}
+
+.content .newCall {
+    float: right;
+    margin-bottom: 1.5em;
+    background-color: #02945D;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    font-weight: bnold;
+    color: #FFF;
+    transition: ease-in-out 0.3s ;
+    border-radius: 5px;
+}
+
+.newCall svg {
+    margin-right: 5px;
+}
+.newCall:hover {
+    background-color: #02945D;
+    transform: scale(1.1);
+}
+
+table{
+    border: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+table caption {
+    font-size: 1.5em;
+    margin: 0.5em 0 0.75em;
+}
+table tr{
+    background-color: #F8F8F8;
+    border: 1px solid #DDD;
+    padding: 0.35em;
+}
+
+table th, table td{
+    padding: 0.6em;
+    text-align: center;
+
+}
+table th {
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.user-data{
+ overflow: hidden;
+ 
+}
+
+table td .action {
+    border: 0;
+    padding: 5px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 3px;
+}
+table td .action svg{
+    vertical-align: middle;
+}
+
+table td .style-status{
+    padding: 3px;
+    border-radius: 3px;
+    color: #FFF;
+}
+@media screen and (max-width: 1149px){
+    table th {
+        font-size: 0.55em;
+    }
+
+}
+@media screen and (max-width: 800px){
+    table{
+        border: 0;
+    }
+    table caption {
+        font-size:1.3em;
+    }
+    table thead {
+        border: none;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+    table tr {
+        border-bottom: 3px solid #DDD;
+        display: block;
+        margin-bottom: 0.60em;
+
+    }
+    table td {
+        border-bottom: 1px solid #DDD;
+        display: block;
+        font-size: 0.8em;
+        text-align: right;
+    }
+    table td::before{
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
