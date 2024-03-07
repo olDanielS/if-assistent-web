@@ -3,9 +3,9 @@ import './styles.css'
 
 export default function NotFound() {
  return (
-   <div className="container">
+   <div className="container2">
         <h1>404</h1>
-        <h2>Page Not found :( </h2>
+        <h2>Page Not found :(d </h2>
    </div>
  );
 }

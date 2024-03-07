@@ -7,6 +7,7 @@ import SignUp from '../pages/SignUp';
 
 import Dashboard from "../pages/dashboard";
 import Profile from "../pages/Profile";
+import New from "../pages/new";
 
 import Privite from "./Privite";
 
@@ -20,6 +21,7 @@ export default function AppRoutes() {
 
             <Route path="/dashboard"element={<Privite><Dashboard/></Privite>} />
             <Route path="/profile"element={<Privite><Profile/></Privite>} />
+            <Route path="/new"element={<Privite><New/></Privite>} />
 
 
         </Routes>

@@ -1,4 +1,4 @@
-.container {
+.container2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,12 +7,12 @@
     flex-direction: column;
 }
 
-.container h1{
+.container2 h1{
     color: #FFF;
     font-size: 5rem;
 }
 
-.container h2{
+.container2 h2{
     color: #FFF;
     font-size: 1rem;
 }
