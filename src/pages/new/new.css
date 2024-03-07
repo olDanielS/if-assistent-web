@@ -3,21 +3,21 @@
     background-color: #FFF;
     flex-direction: column;
 }
-.form-profile{
+.form-user{
     display: flex;
     flex-direction: column;
     padding: 20px;
     align-items:flex-start;
     
 }
-.form-profile label{
+.form-user label{
    font-size: 18px;
    font-weight: bold;
    margin-top: 10px;
    margin-bottom: 5px;
 }
 
-form input[type="text"]{
+form .input{
     background-color: #EFEFEF;
     border-radius: 4px;
     border: none;

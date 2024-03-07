@@ -22,10 +22,7 @@ export default function Header() {
             <FiHome color='#FFF' size={24}/>
             Home
         </Link>
-        <Link to="/labs">
-            <FiBook color='#FFF' size={24}/>
-            Laboratorios
-        </Link>
+    
         <Link to="/users">
             <FiUser color='#FFF' size={24}/>
             Usuarios
