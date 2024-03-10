@@ -12,6 +12,12 @@ import { addDoc, collection} from "firebase/firestore";
 
 import {toast} from 'react-toastify';
 
+interface ContextProps{
+     user: {
+        uid: string
+     }
+}
+
 export default function New() {
 
     const [name, setName] = useState("");
@@ -21,9 +27,7 @@ export default function New() {
     const [status, setStatus] = useState("");
     const [description, setDescription] = useState("");
 
-    const {user} = useContext(AuthContext);
-
-    
+    const {user} = useContext(AuthContext) as ContextProps;
 
     function handleOptionChange(e){
         setStatus(e.target.value)
@@ -140,7 +144,7 @@ export default function New() {
                         </div>
 
                        <textarea 
-                       type="text"  
+                      
                        placeholder="Descrição do problema."
                        value={description} onChange={(e) => setDescription(e.target.value)}
                        /> 

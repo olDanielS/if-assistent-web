@@ -12,12 +12,14 @@ export default function Header() {
 
     const {user, Logout} = useContext(AuthContext);
 
+
     return (
    <div className='sidebar'>
-        <div>
-            <img src={logo} alt="logo do sistema" />
+    
+     <div>
+            <img src={logo} alt="logo do sistema"/>
         </div>
-
+    
         <Link to="/dashboard">
             <FiHome color='#FFF' size={24}/>
             Home

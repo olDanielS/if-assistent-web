@@ -1,7 +1,7 @@
 import React, {useState, useContext} from "react";
 import './login.css';
 
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo2.png';
 import {Link} from 'react-router-dom';
 
 import { AuthContext } from "../../contexts/auth";

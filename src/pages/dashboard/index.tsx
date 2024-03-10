@@ -33,11 +33,12 @@ export default function Dashboard() {
     const [tickets, setTickets] = useState<DocumentData[]>([]);
     const [loading, setLoading] = useState(true);
     const [isEmply, setIsEmply] = useState(false);
-
+    const [lastItem, setLastItem] = useState();
+    const [loadingMore, setLoadingMore] = useState(false);
 
     useEffect(() => {
         async function loadTickets() {
-            const consult = query(listRef, orderBy('status', 'asc'), limit(10));
+            const consult = query(listRef, orderBy('status', 'asc'), limit(5));
 
             const consultSnapshot = await getDocs(consult);
             setTickets([])
@@ -74,11 +75,15 @@ export default function Dashboard() {
 
                 });
             });
+            const lastDoc= consultSnapshot.docs[consultSnapshot.docs.length - 1]
+            setLastItem(lastDoc)
+
             setTickets(chamados => [...chamados, ...list]);
-            console.log(tickets)
+
         } else {
             setIsEmply(true)
         }
+        setLoadingMore(false)
     }
 
     if(loading){
@@ -95,6 +100,14 @@ export default function Dashboard() {
                 </div>
             </div>
         )
+    }
+
+    async function handleMore(){
+            setLoadingMore(true);
+            const q = query(listRef, orderBy('status', 'asc'),startAfter(lastItem), limit(5));
+            const querySnapshot = await getDocs(q);
+
+            await updateState(querySnapshot)
     }
 
     return (
@@ -145,7 +158,7 @@ export default function Dashboard() {
                                                 <td data-label="laboratorio">{item.lab}</td>
                                                 <td data-label="Equipamento">{item.equip}</td>
                                                 <td data-label="Status">
-                                                    <span className="style-status" style={{ backgroundColor: "#999" }}>{item.status}</span>
+                                                    <span className="style-status" style={{ padding: 5, backgroundColor: item.status == 'Aberto' ? '#02945D' : '#999' }}>{item.status }</span>
                                                 </td>
                                                 <td data-label="created" className="user-data">{item.createdFormat}</td>
                                                 <td data-label="patrimonio" className="user-data">{item.number}</td>
@@ -165,6 +178,10 @@ export default function Dashboard() {
 
                                 </tbody>
                             </table>
+                            {
+                                loadingMore && <h3>Buscando mais chamados...</h3>
+                            }
+                           {!loadingMore && !isEmply &&  <button className="btn-more" onClick={handleMore}>Buscar mais</button> }
                         </>
                     )
 
