@@ -22,6 +22,7 @@ export default function AppRoutes() {
             <Route path="/dashboard"element={<Privite><Dashboard/></Privite>} />
             <Route path="/profile"element={<Privite><Profile/></Privite>} />
             <Route path="/new"element={<Privite><New/></Privite>} />
+            <Route path="/new/:id"element={<Privite><New/></Privite>} />
 
 
         </Routes>

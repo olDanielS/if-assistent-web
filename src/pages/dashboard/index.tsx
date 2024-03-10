@@ -167,9 +167,9 @@ export default function Dashboard() {
                                                     <button className="action" style={{ backgroundColor: "#3583f6" }}>
                                                         <FiSearch size={16} color="FFF" />
                                                     </button>
-                                                    <button className="action" style={{ backgroundColor: "#d6a935" }}>
+                                                    <Link to={`/new/${item.id}`}className="action" style={{ backgroundColor: "#d6a935" }}>
                                                         <FiEdit2 size={16} color="FFF" />
-                                                    </button>
+                                                    </Link>
                                                 </td>
                                             </tr>
 

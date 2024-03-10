@@ -16,6 +16,9 @@
    border-radius: 20px;
    
 }
+.login .btn {
+   margin: 0 auto;
+}
 .header-login{
    background-color: #FFF;
    width: 100%;

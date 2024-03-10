@@ -38,7 +38,7 @@ export default function Login() {
                     <input type="password" placeholder="********" value={password}
                      onChange={(e) => setPassword(e.target.value)}/>
 
-                    <button className="submit">{loadingAuth ? "Acessando..." : "Acessar Conta"}</button>
+                    <button className="submit btn">{loadingAuth ? "Acessando..." : "Acessar Conta"}</button>
                 </form>
 
                 <Link to="/register">Não possui uma conta? <span>Criar Conta</span></Link>
