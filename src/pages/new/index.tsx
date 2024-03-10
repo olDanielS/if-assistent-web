@@ -17,10 +17,13 @@ export default function New() {
     const [name, setName] = useState("");
     const [lab, setLab] = useState("F1");
     const [number, setNumber] = useState("");
+    const [equip, setEquip] = useState("");
     const [status, setStatus] = useState("");
     const [description, setDescription] = useState("");
 
     const {user} = useContext(AuthContext);
+
+    
 
     function handleOptionChange(e){
         setStatus(e.target.value)
@@ -34,7 +37,7 @@ export default function New() {
 
     async function handleRegister(e){
         e.preventDefault();
-        if(!name || !lab || !number || !status|| !description){
+        if(!name || !lab || !status|| !description){
             toast.error("Ops, Verifique os campos e tente novamente")
             return
             
@@ -47,6 +50,7 @@ export default function New() {
             number: number,
             status: status,
             description: description,
+            equip: equip,
             userID: user.uid
             
         }).then(() => {
@@ -92,7 +96,12 @@ export default function New() {
 
                         </select>
 
-                        <label>Nº patrimonio</label>
+                        <label>Equipamento</label>
+                        <input type="text" placeholder="Computador"
+                             value={equip} onChange={(e) => setEquip(e.target.value)}
+                             className="input"
+                        />
+                        <label>Nº patrimonio  <span>(Opcional)</span></label>
                         <input type="number" placeholder="5566"
                              value={number} onChange={(e) => setNumber(e.target.value)}
                              className="input"

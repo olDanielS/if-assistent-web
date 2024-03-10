@@ -26,6 +26,15 @@
     transform: scale(1.1);
 }
 
+.dashboard{
+    align-items: center;
+    gap: 10px;
+}
+.dashboard span{
+    margin: 2em 0;
+    font-size: 1.2em;
+    
+}
 table{
     border: 1px solid #ccc;
     margin: 0;
