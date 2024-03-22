@@ -223,22 +223,22 @@ return (
 
                         <input type="radio"
                             name="radio"
-                            value="Progresso"
-                            checked={status === "Progresso"}
+                            value="Em Progresso"
+                            checked={status === "Em Progresso"}
                             onChange={handleOptionChange}
 
                         />
-                        <span>Progresso</span>
+                        <span>Em Progresso</span>
 
 
                         <input type="radio"
                             name="radio"
-                            value="Atendido"
-                            checked={status === "Atendido"}
+                            value="Finalizado"
+                            checked={status === "Finalizado"}
                             onChange={handleOptionChange}
 
                         />
-                        <span>Atendido</span>
+                        <span>Finalizado</span>
 
                     </div>
 

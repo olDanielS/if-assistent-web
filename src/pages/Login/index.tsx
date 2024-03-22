@@ -34,16 +34,19 @@ export default function Login() {
 
                 <form className="form-login" onSubmit={handleLogin}>
                 <h1>Login</h1>
+                <hr/>
+                    <span>Usúario</span>
                     <input type="text" placeholder="email@ifba.com" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    <span>Senha</span>
                     <input type="password" placeholder="********" value={password}
                      onChange={(e) => setPassword(e.target.value)}/>
 
                     <button className="submit btn">{loadingAuth ? "Acessando..." : "Acessar Conta"}</button>
                 </form>
 
-                <Link to="/register">Não possui uma conta? <span>Criar Conta</span></Link>
 
             </div>
         </div>
+    //<Link to="/register">Não possui uma conta? <span>Criar Conta</span></Link>
     );
 }
