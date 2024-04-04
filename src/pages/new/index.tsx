@@ -228,7 +228,7 @@ return (
                             onChange={handleOptionChange}
 
                         />
-                        <span>Em Progresso</span>
+                        <span>Progresso</span>
 
 
                         <input type="radio"
@@ -238,7 +238,7 @@ return (
                             onChange={handleOptionChange}
 
                         />
-                        <span>Finalizado</span>
+                        <span>Atendido</span>
 
                     </div>
 

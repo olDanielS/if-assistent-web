@@ -8,8 +8,8 @@ import { FiBook, FiMessageSquare, FiPlus, FiSearch, FiEdit2 } from 'react-icons/
 
 import './dashboard.css'
 import { format } from 'date-fns'
-
 import { Link } from "react-router-dom";
+import Modal from '../../components/Modal';
 
 import { collection, getDocs, orderBy, limit, startAfter, query } from 'firebase/firestore';
 import { db } from "../../services/firebaseConnect";
@@ -35,6 +35,10 @@ export default function Dashboard() {
     const [isEmply, setIsEmply] = useState(false);
     const [lastItem, setLastItem] = useState();
     const [loadingMore, setLoadingMore] = useState(false);
+    
+    const [showModal, setShowModal] = useState(false);
+    const [detail, setDetail] = useState();
+
 
     useEffect(() => {
         async function loadTickets() {
@@ -101,6 +105,10 @@ export default function Dashboard() {
             </div>
         )
     }
+    function toggleModal(item){
+        setShowModal(!showModal)
+        setDetail(item)
+    }
 
     async function handleMore(){
             setLoadingMore(true);
@@ -158,13 +166,13 @@ export default function Dashboard() {
                                                 <td data-label="laboratorio">{item.lab}</td>
                                                 <td data-label="Equipamento">{item.equip}</td>
                                                 <td data-label="Status">
-                                                    <span className="style-status" style={{ padding: 5, backgroundColor: item.status == 'Aberto' ? '#02945D' : '#999' }}>{item.status }</span>
+                                                    <span className="style-status" style={{ padding: 5, backgroundColor: item.status == 'Aberto' ? '#02945D' : '#d6a935' }}>{item.status }</span>
                                                 </td>
                                                 <td data-label="created" className="user-data">{item.createdFormat}</td>
                                                 <td data-label="patrimonio" className="user-data">{item.number}</td>
                                                 <td data-label="Descricao" className="user-data">{item.description}</td>
                                                 <td data-label="#">
-                                                    <button className="action" style={{ backgroundColor: "#3583f6" }}>
+                                                    <button className="action" style={{ backgroundColor: "#3583f6" }} onClick={() => toggleModal(item)}>
                                                         <FiSearch size={16} color="FFF" />
                                                     </button>
                                                     <Link to={`/new/${item.id}`}className="action" style={{ backgroundColor: "#d6a935" }}>
@@ -183,13 +191,14 @@ export default function Dashboard() {
                             }
                            {!loadingMore && !isEmply &&  <button className="btn-more" onClick={handleMore}>Buscar mais</button> }
                         </>
-                    )
-
-                }
-
-
-
-            </div>
+                    )}
+               </div>
+               {
+                   showModal &&
+                   <Modal content={detail}
+                    close = {() => setShowModal(!showModal)}
+                   />
+               }
         </div>
     );
 }
