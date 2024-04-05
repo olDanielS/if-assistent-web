@@ -13,7 +13,8 @@ import { toast } from 'react-toastify';
 interface UserProps {
     name: string,
     email: string,
-    password: string
+    password: string,
+    isAdmin: boolean
 }
 export const AuthContext = createContext({})
 
@@ -51,11 +52,19 @@ export default function AuthProvider({ children }) {
             const docRef = doc(db, "users", uid);
             const docSnap = await getDoc(docRef)
 
+            console.log(docSnap.data())
             let data = {
                 uid: uid,
                 name: docSnap.data.name,
                 email: value.user.email,
-                avatarUrl: null
+                avatarUrl: null,
+            }
+            
+            const validateUser = docSnap.data();
+            if (validateUser&& validateUser.isAdmin === false) {
+                toast.error("Você não possui permissão para acessar essa parte do sistema")
+                setLoadingAuth(false)
+                return
             }
 
             setUser(data)
@@ -100,12 +109,14 @@ export default function AuthProvider({ children }) {
 
             await setDoc(doc(db, "users", uid), {
                 name: name,
-                avatarUrl: null
+                avatarUrl: null,
+                isAdmin: false,
             }).then(() => {
                 let data = {
                     uid: uid,
                     name: name,
                     email: value.user.email,
+                    
                     avatarUrl: null
                 }
                 setUser(data)

@@ -33,11 +33,7 @@ export default function Header() {
             <FiAward color='#FFF' size={24}/>
             FAQS
         </Link>
-        <Link to="/profile">
-            <FiSettings color='#FFF' size={24}/>
-            Perfil
-        </Link>
-
+       
         <Link to="" onClick={async() => await Logout() }>
             <FiXCircle color='#FFF' size={24}/>
             Sair
@@ -46,3 +42,8 @@ export default function Header() {
    </div>
  );
 }
+
+/*<Link to="/profile">
+            <FiSettings color='#FFF' size={24}/>
+            Perfil
+        </Link> */

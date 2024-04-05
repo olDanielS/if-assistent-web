@@ -147,8 +147,8 @@ export default function Dashboard() {
                             <table>
                                 <thead>
                                     <tr>
-                                        <th scope="col">Usuario</th>
-                                        <th scope="col">Laboratorio</th>
+                                        <th scope="col">Usuário</th>
+                                        <th scope="col">Laboratório</th>
                                         <th scope="col">Equipamento</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Aberto em</th>
