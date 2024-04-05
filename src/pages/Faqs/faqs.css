@@ -1,0 +1,14 @@
+.btnFaq{
+    float: left;
+}
+
+.container {
+    display: flex; 
+    background-color: #fff;
+    flex-direction: column;
+}
+.container-accordion {
+   margin-top: 100px;
+   max-width: 90%;
+   background-color: #fff;
+}  
