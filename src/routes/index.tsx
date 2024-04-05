@@ -9,7 +9,6 @@ import Dashboard from "../pages/dashboard";
 import Profile from "../pages/Profile";
 import Faqs from '../pages/Faqs'
 import New from "../pages/new";
-import NewFaq from "../pages/newFaq";
 
 import Privite from "./Privite";
 
@@ -27,7 +26,6 @@ export default function AppRoutes() {
             <Route path="/profile"element={<Privite><Profile/></Privite>} />
             <Route path="/new"element={<Privite><New/></Privite>} />
             <Route path="/new/:id"element={<Privite><New/></Privite>} />
-            <Route path="/newfaq"element={<Privite><NewFaq/></Privite>} />
 
 
         </Routes>

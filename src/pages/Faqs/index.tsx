@@ -70,7 +70,7 @@ export default function Faqs() {
                     <FiMessageSquare size={24} />
                 </Title>
 
-                    <Link to="/newfaq" className="newCall">
+                    <Link to="/new" className="newCall">
                         <FiPlus size={24} />
                         Nova FAQ
                     </Link>
