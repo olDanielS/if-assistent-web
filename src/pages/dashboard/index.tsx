@@ -149,11 +149,11 @@ export default function Dashboard() {
                                     <tr>
                                         <th scope="col">Usuário</th>
                                         <th scope="col">Laboratório</th>
-                                        <th scope="col">Equipamento</th>
+                                        
                                         <th scope="col">Status</th>
                                         <th scope="col">Aberto em</th>
                                         <th scope="col">Nº Patrimonio</th>
-                                        <th scope="col">Descrição</th>
+                                        
                                         <th scope="col">Ações</th>
                                         
                                     </tr>
@@ -164,13 +164,13 @@ export default function Dashboard() {
                                             <tr key={index}>
                                                 <td data-label="Cliente" className="user-data">{item.name}</td>
                                                 <td data-label="laboratorio">{item.lab}</td>
-                                                <td data-label="Equipamento">{item.equip}</td>
+                                                
                                                 <td data-label="Status">
                                                     <span className="style-status" style={{ padding: 5, backgroundColor: item.status == 'Aberto' ? '#02945D' : '#d6a935' }}>{item.status }</span>
                                                 </td>
                                                 <td data-label="created" className="user-data">{item.createdFormat}</td>
                                                 <td data-label="patrimonio" className="user-data">{item.number}</td>
-                                                <td data-label="Descricao" className="user-data">{item.description}</td>
+                                                
                                                 <td data-label="#">
                                                     <button className="action" style={{ backgroundColor: "#3583f6" }} onClick={() => toggleModal(item)}>
                                                         <FiSearch size={16} color="FFF" />

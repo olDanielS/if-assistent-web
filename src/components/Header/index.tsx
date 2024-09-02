@@ -10,7 +10,7 @@ import { AuthContext } from '../../contexts/auth';
 
 export default function Header() {
 
-    const {user, Logout} = useContext(AuthContext);
+    const {user, Logout}:any = useContext(AuthContext);
 
 
     return (
@@ -25,9 +25,9 @@ export default function Header() {
             Home
         </Link>
     
-        <Link to="/users">
+        <Link to="/authorizations">
             <FiUser color='#FFF' size={24}/>
-            Usuarios
+            Aguardando aprovação
         </Link>
         <Link to="/faqs">
             <FiAward color='#FFF' size={24}/>

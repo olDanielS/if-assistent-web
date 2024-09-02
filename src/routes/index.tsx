@@ -10,6 +10,7 @@ import Profile from "../pages/Profile";
 import Faqs from '../pages/Faqs'
 import New from "../pages/new";
 import NewFaq from "../pages/newFaq";
+import Authorizations from "../pages/authorizations";
 
 import Privite from "./Privite";
 
@@ -22,6 +23,7 @@ export default function AppRoutes() {
             <Route path="/register" element={<SignUp />} />
 
             <Route path="/dashboard"element={<Privite><Dashboard/></Privite>} />
+            <Route path="/Authorizations"element={<Privite><Authorizations/></Privite>} />
             <Route path="/Faqs"element={<Privite><Faqs/></Privite>} />
 
             <Route path="/profile"element={<Privite><Profile/></Privite>} />
