@@ -27,7 +27,11 @@ export default function Header() {
     
         <Link to="/authorizations">
             <FiUser color='#FFF' size={24}/>
-            Aguardando aprovação
+            Aguardando aprovação de perfil Mobile
+        </Link>
+        <Link to="/revoke">
+            <FiUser color='#FFF' size={24}/>
+            Revogar acesso de perfil Mobile
         </Link>
         <Link to="/faqs">
             <FiAward color='#FFF' size={24}/>
